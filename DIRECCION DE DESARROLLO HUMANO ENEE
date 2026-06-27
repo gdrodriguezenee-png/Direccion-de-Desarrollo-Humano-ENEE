@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal DDH - ENEE</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 60%, #0d2240 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .header img {
+    width: 80px;
+    margin-bottom: 14px;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  .header p {
+    font-size: 0.85rem;
+    color: #a0b8d0;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .cards {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 40px 36px;
+    width: 240px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(8px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 20px 20px 0 0;
+  }
+
+  .card:hover {
+    background: rgba(255,255,255,0.13);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    border-color: var(--accent);
+  }
+
+  .card.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .card-icon {
+    font-size: 3rem;
+    margin-bottom: 18px;
+    display: block;
+  }
+
+  .card h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+
+  .card p {
+    font-size: 0.78rem;
+    color: #a0b8d0;
+    line-height: 1.5;
+  }
+
+  .badge {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .card-docs  { --accent: #27ae60; }
+  .card-memo  { --accent: #e67e22; }
+
+  .footer {
+    margin-top: 56px;
+    font-size: 0.72rem;
+    color: #5a7a9a;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <!-- Logo ENEE en base64 o texto como fallback -->
+  <svg width="70" height="70" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="35" cy="35" r="34" fill="none" stroke="#c9a227" stroke-width="2"/>
+    <text x="35" y="42" text-anchor="middle" font-size="18" font-weight="bold" fill="#c9a227" font-family="serif">ENEE</text>
+  </svg>
+  <h1>Dirección de Desarrollo Humano</h1>
+  <p>Empresa Nacional de Energía Eléctrica · 2026</p>
+</div>
+
+<div class="cards">
+
+  <!-- Control de Documentos -->
+  <a href="DDH.html" class="card card-docs">
+    <span class="card-icon">📂</span>
+    <h2>Control de Documentos</h2>
+    <p>Gestión y seguimiento de documentos recibidos en la DDH</p>
+    <span class="badge">Disponible</span>
+  </a>
+
+  <!-- Control de Memorandos -->
+  <a href="Memorandos.html" class="card card-memo disabled" id="cardMemo">
+    <span class="card-icon">📝</span>
+    <h2>Control de Memorandos</h2>
+    <p>Registro y Control de Memorandos</p>
+    <span class="badge" style="background:#555">Próximamente</span>
+  </a>
+
+</div>
+
+<div class="footer">
+  Portal DDH &nbsp;·&nbsp; ENEE Honduras &nbsp;·&nbsp; 2026
+</div>
+
+</body>
+</html>
